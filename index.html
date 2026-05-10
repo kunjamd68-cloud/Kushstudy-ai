@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KushStudy AI</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg,#020617,#0f172a,#111827);
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.05);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.start-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#38bdf8,#8b5cf6);
+  color: white;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 8%;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1;
+}
+.hero-left h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero-left p {
+  color: #cbd5e1;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg,#38bdf8,#8b5cf6);
+  color: white;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.hero-right {
+  flex: 1;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.progress-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+
+.features,
+.dashboard,
+.timer-section,
+.contact {
+  padding: 120px 8%;
+}
+
+.feature-grid,
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+}
+
+.feature-card,
+.dashboard-card {
+  background: rgba(255,255,255,0.05);
+  padding: 35px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.feature-card:hover,
+.dashboard-card:hover {
+  transform: translateY(-10px);
+}
+
+.timer-box {
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 60px;
+  border-radius: 24px;
+}
+
+#timer {
+  font-size: 90px;
+  margin-bottom: 30px;
+}
+
+.timer-buttons button {
+  padding: 14px 28px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(135deg,#38bdf8,#8b5cf6);
+  color: white;
+}
+
+form {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input,
+textarea {
+  padding: 18px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255,255,255,0.06);
+  color: white;
+}
+
+textarea {
+  height: 180px;
+}
+
+form button {
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#38bdf8,#8b5cf6);
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+@media(max-width:768px) {
+
+  .hero-left h1 {
+    font-size: 42px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  #timer {
+    font-size: 60px;
+  }
+}</style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">KushStudy AI</div>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="start-btn">Get Started</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-left">
+      <h1>
+        AI Powered Student
+        Productivity Platform
+      </h1>
+
+      <p>
+        Track goals, manage notes, study smarter,
+        use Pomodoro timer and build consistency.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn">Start Free</button>
+        <button class="secondary-btn">Explore</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="glass-card">
+
+        <h2>Today's Progress</h2>
+
+        <div class="progress-box">
+          <h3>Study Hours</h3>
+          <p>6.5 Hours</p>
+        </div>
+
+        <div class="progress-box">
+          <h3>Tasks Completed</h3>
+          <p>12 Tasks</p>
+        </div>
+
+        <div class="progress-box">
+          <h3>Current Streak</h3>
+          <p>18 Days</p>
+        </div>
+        
+      </div>
+    </div>
+
+  </section>
+
+  <section id="features" class="features">
+
+    <h2 class="section-title">Features</h2>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <h3>Pomodoro Timer</h3>
+        <p>Stay focused with smart study sessions.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>AI Assistant</h3>
+        <p>Get smart study recommendations.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Notes System</h3>
+        <p>Save and organize your study notes.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Goal Tracking</h3>
+        <p>Track daily and weekly goals easily.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="dashboard" class="dashboard">
+
+    <h2 class="section-title">Dashboard Analytics</h2>
+
+    <div class="dashboard-grid">
+
+      <div class="dashboard-card">
+        <h3>Total Study Time</h3>
+        <p>248 Hours</p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Weekly Progress</h3>
+        <p>82%</p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>AI Efficiency</h3>
+        <p>91%</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="timer-section">
+
+    <h2 class="section-title">Pomodoro Timer</h2>
+
+    <div class="timer-box">
+      <h1 id="timer">25:00</h1>
+      
+      <div class="timer-buttons">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+  </section>
+
+  <footer>
+    <p>
+      Designed & Developed by Kush Kumar Kunjam
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+ <script>
+   let time = 1500;
+let timer;
+let running = false;
+
+function updateDisplay() {
+
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  document.getElementById('timer').innerText = `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+
+  if(running) return;
+
+  running = true;
+
+  timer = setInterval(() => {
+
+    if(time > 0) {
+      time--;
+      updateDisplay();
+    }
+    else {
+      clearInterval(timer);
+      alert('Pomodoro Session Completed');
+    }
+
+  },1000);
+}
+
+function pauseTimer() {
+  clearInterval(timer);
+  running = false;
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  running = false;
+  time = 1500;
+  updateDisplay();
+}
+
+updateDisplay();
+
+window.addEventListener('scroll',() => {
+
+  const cards = document.querySelectorAll('.feature-card,.dashboard-card');
+
+  cards.forEach(card => {
+
+    const position = card.getBoundingClientRect().top;
+
+    if(position < window.innerHeight - 100) {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }
+
+  });
+
+});
+
+const cards = document.querySelectorAll('.feature-card,.dashboard-card');
+
+cards.forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(50px)';
+  card.style.transition = '0.8s';
+});
+ </script>
+</html>
+
+
